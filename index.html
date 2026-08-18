@@ -7,109 +7,355 @@
   <title>G-Stream</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="header">
-    <a class="brand" href="#accueil"><img class="brand-logo" src="gstream-logo.png" alt="G-Stream"></a>
+    <a class="brand" href="#accueil">
+      <img class="brand-logo" src="gstream-logo.png" alt="G-Stream">
+    </a>
+
     <nav id="nav">
       <a href="#accueil">Accueil</a>
       <a href="#offres">Offres</a>
+      <a href="#packs">Packs</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
+
     <button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </header>
 
   <main>
+
     <section id="accueil" class="hero">
       <div class="badge">● LIVRAISON RAPIDE • SERVICE GARANTI</div>
+
       <p class="eyebrow">SERVICES NUMÉRIQUES</p>
-      <h1>Le <span>premium</span><br>au meilleur prix</h1>
-      <p class="subtitle">Découvre nos offres numériques et commande simplement depuis ton téléphone.</p>
+
+      <h1>
+        Le <span>premium</span><br>
+        au meilleur prix
+      </h1>
+
+      <p class="subtitle">
+        Découvre nos offres numériques et commande simplement depuis ton téléphone.
+      </p>
+
       <div class="actions">
         <a class="btn primary" href="#offres">🛒 Voir les offres</a>
-        <a class="btn secondary" id="waHero" href="#" target="_blank">💬 WhatsApp direct</a>
+        <a class="btn secondary" id="waHero" href="#" target="_blank">
+          💬 WhatsApp direct
+        </a>
       </div>
     </section>
 
     <section class="trust">
-      <div><strong>⚡ Rapide</strong><span>Traitement des commandes</span></div>
-      <div><strong>💳 Paiement local</strong><span>Airtel Money & Moov Money</span></div>
-      <div><strong>📱 WhatsApp</strong><span>Assistance directe</span></div>
+      <div>
+        <strong>⚡ Rapide</strong>
+        <span>Traitement des commandes</span>
+      </div>
+
+      <div>
+        <strong>💳 Paiement local</strong>
+        <span>Airtel Money & Moov Money</span>
+      </div>
+
+      <div>
+        <strong>📱 WhatsApp</strong>
+        <span>Assistance directe</span>
+      </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="offres" class="section">
       <p class="eyebrow">NOS OFFRES</p>
       <h2>Choisis ton service</h2>
-      <p class="section-intro">Netflix, Spotify Premium, Apple Music, Prime Video, Canva Pro et bien plus. Choisis ton service puis commande directement sur WhatsApp.</p>
+
+      <p class="section-intro">
+        Des services numériques premium à des tarifs accessibles.
+        Choisis ton service puis commande directement sur WhatsApp.
+      </p>
+
       <div class="grid">
+
         <article class="card">
-          <div class="service-logo"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix"></div>
+          <div class="service-logo">
+            <img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix">
+          </div>
           <h3>Netflix</h3>
           <p>Abonnement streaming premium.</p>
-          <div class="price">Sur demande <small>FCFA</small></div>
-          <button onclick="order('Netflix', 'Prix à confirmer sur WhatsApp')">Commander</button>
+          <div class="price">3 500 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Netflix', 3500)">Commander</button>
         </article>
+
         <article class="card">
-          <div class="service-logo"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify"></div>
+          <div class="service-logo">
+            <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify">
+          </div>
           <h3>Spotify Premium</h3>
           <p>Musique sans publicité et écoute premium.</p>
-          <div class="price">Sur demande <small>FCFA</small></div>
-          <button onclick="order('Spotify Premium', 'Prix à confirmer sur WhatsApp')">Commander</button>
+          <div class="price">3 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Spotify Premium', 3000)">Commander</button>
         </article>
+
         <article class="card">
-          <div class="service-logo"><img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="Apple Music"></div>
+          <div class="service-logo">
+            <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="Apple Music">
+          </div>
           <h3>Apple Music</h3>
           <p>Plus de 100 millions de chansons à écouter.</p>
-          <div class="price">Sur demande <small>FCFA</small></div>
-          <button onclick="order('Apple Music', 'Prix à confirmer sur WhatsApp')">Commander</button>
+          <div class="price">3 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Apple Music', 3000)">Commander</button>
         </article>
+
         <article class="card">
-          <div class="service-logo"><img src="canva.svg" alt="Canva Pro"></div>
+          <div class="service-logo">
+            <img src="primevideo.svg" alt="Prime Video">
+          </div>
+          <h3>Prime Video</h3>
+          <p>Films et séries en streaming premium.</p>
+          <div class="price">3 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Prime Video', 3000)">Commander</button>
+        </article>
+
+        <article class="card">
+          <div class="service-logo">
+            <img src="canva.svg" alt="Canva Pro">
+          </div>
           <h3>Canva Pro</h3>
           <p>Outils créatifs et fonctionnalités premium.</p>
-          <div class="price">Sur demande <small>FCFA</small></div>
-          <button onclick="order('Canva Pro', 'Prix à confirmer sur WhatsApp')">Commander</button>
+          <div class="price">4 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Canva Pro', 4000)">Commander</button>
         </article>
+
         <article class="card">
-          <div class="service-logo"><img src="primevideo.svg" alt="Prime Video"></div>
-          <h3>Prime Video</h3>
-          <p>Suite créative pour les professionnels.</p>
-          <div class="price">Sur demande <small>FCFA</small></div>
-          <button onclick="order('Prime Video', 'Prix à confirmer sur WhatsApp')">Commander</button>
+          <div class="service-logo">
+            <img src="https://cdn.simpleicons.org/capcut/ffffff" alt="CapCut Pro">
+          </div>
+          <h3>CapCut Pro</h3>
+          <p>Outils avancés pour créer et modifier tes vidéos.</p>
+          <div class="price">4 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('CapCut Pro', 4000)">Commander</button>
         </article>
+
+        <article class="card">
+          <div class="service-logo">
+            <img src="https://cdn.simpleicons.org/crunchyroll/F47521" alt="Crunchyroll">
+          </div>
+          <h3>Crunchyroll</h3>
+          <p>Anime, séries et contenus japonais premium.</p>
+          <div class="price">3 000 <small>FCFA / mois</small></div>
+          <button onclick="openOrder('Crunchyroll', 3000)">Commander</button>
+        </article>
+
       </div>
     </section>
 
+    <!-- PACKS -->
+    <section id="packs" class="section packs-section">
+      <p class="eyebrow">🔥 NOS PACKS</p>
+      <h2>Profite de nos packs</h2>
+
+      <p class="section-intro">
+        Regroupe plusieurs services dans une seule offre et profite d'un tarif avantageux.
+      </p>
+
+      <div class="packs-grid">
+
+        <article class="pack-card featured">
+          <div class="pack-badge">POPULAIRE</div>
+          <div class="pack-icon">🎬</div>
+          <h3>Pack Streaming</h3>
+
+          <p class="pack-services">
+            Netflix + Spotify Premium
+          </p>
+
+          <div class="pack-price">
+            5 500 <small>FCFA</small>
+          </div>
+
+          <p class="saving">
+            Économise 1 000 FCFA
+          </p>
+
+          <button onclick="openPack('Pack Streaming', 'Netflix + Spotify Premium', 5500)">
+            Commander le pack
+          </button>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-icon">🍿</div>
+          <h3>Pack Streaming+</h3>
+
+          <p class="pack-services">
+            Netflix + Prime Video + Spotify Premium
+          </p>
+
+          <div class="pack-price">
+            8 000 <small>FCFA</small>
+          </div>
+
+          <p class="saving">
+            Économise 1 500 FCFA
+          </p>
+
+          <button onclick="openPack('Pack Streaming+', 'Netflix + Prime Video + Spotify Premium', 8000)">
+            Commander le pack
+          </button>
+        </article>
+
+        <article class="pack-card">
+          <div class="pack-icon">🎨</div>
+          <h3>Pack Créateur</h3>
+
+          <p class="pack-services">
+            Canva Pro + CapCut Pro
+          </p>
+
+          <div class="pack-price">
+            6 000 <small>FCFA</small>
+          </div>
+
+          <p class="saving">
+            Économise 2 000 FCFA
+          </p>
+
+          <button onclick="openPack('Pack Créateur', 'Canva Pro + CapCut Pro', 6000)">
+            Commander le pack
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMMENT CA MARCHE -->
     <section class="how">
       <p class="eyebrow">COMMENT ÇA MARCHE ?</p>
       <h2>Commande en 3 étapes</h2>
+
       <div class="steps">
-        <div><b>01</b><h3>Choisis</h3><p>Sélectionne l'offre qui t'intéresse.</p></div>
-        <div><b>02</b><h3>Contacte-nous</h3><p>La commande s'ouvre directement sur WhatsApp.</p></div>
-        <div><b>03</b><h3>Reçois ton service</h3><p>Après validation du paiement et de la commande.</p></div>
+        <div>
+          <b>01</b>
+          <h3>Choisis</h3>
+          <p>Sélectionne le service ou le pack qui t'intéresse.</p>
+        </div>
+
+        <div>
+          <b>02</b>
+          <h3>Confirme</h3>
+          <p>Vérifie le récapitulatif de ta commande.</p>
+        </div>
+
+        <div>
+          <b>03</b>
+          <h3>Reçois ton service</h3>
+          <p>Finalise le paiement puis reçois ton service.</p>
+        </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="section faq">
       <p class="eyebrow">FAQ</p>
       <h2>Questions fréquentes</h2>
-      <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Ajoute ici tes moyens de paiement réellement disponibles.</p></details>
-      <details><summary>Comment passer une commande ?</summary><p>Choisis une offre puis clique sur « Commander » pour ouvrir WhatsApp.</p></details>
-      <details><summary>Combien de temps faut-il pour traiter une commande ?</summary><p>Indique ici ton délai réel de traitement.</p></details>
+
+      <details>
+        <summary>Quels moyens de paiement acceptez-vous ?</summary>
+        <p>
+          Nous acceptons actuellement Airtel Money et Moov Money.
+        </p>
+      </details>
+
+      <details>
+        <summary>Comment passer une commande ?</summary>
+        <p>
+          Choisis une offre, clique sur « Commander », vérifie ton récapitulatif
+          puis contacte-nous directement sur WhatsApp.
+        </p>
+      </details>
+
+      <details>
+        <summary>Combien coûte un service ?</summary>
+        <p>
+          Les tarifs sont affichés directement sur chaque offre.
+          Les services individuels sont proposés à partir de 3 000 FCFA par mois.
+        </p>
+      </details>
+
+      <details>
+        <summary>Comment fonctionne un pack ?</summary>
+        <p>
+          Les packs regroupent plusieurs services dans une seule offre à tarif avantageux.
+        </p>
+      </details>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="contact">
       <p class="eyebrow">CONTACT</p>
       <h2>Besoin d'aide ?</h2>
       <p>Notre équipe est disponible sur WhatsApp.</p>
-      <a class="btn primary" id="waContact" href="#" target="_blank">💬 Nous écrire sur WhatsApp</a>
+
+      <a class="btn primary" id="waContact" href="#" target="_blank">
+        💬 Nous écrire sur WhatsApp
+      </a>
     </section>
+
   </main>
 
   <footer>
-    <div class="brand"><span class="logo">GS</span><span>G-STREAM</span></div>
+    <div class="brand">
+      <span class="logo">GS</span>
+      <span>G-STREAM</span>
+    </div>
+
     <p>© 2026 G-Stream — Tous droits réservés.</p>
   </footer>
+
+  <!-- FENÊTRE DE COMMANDE -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+
+      <button class="modal-close" onclick="closeOrder()" aria-label="Fermer">
+        ×
+      </button>
+
+      <p class="eyebrow">COMMANDE</p>
+      <h2>Récapitulatif</h2>
+
+      <div class="order-summary">
+        <div>
+          <span>Offre</span>
+          <strong id="orderProduct"></strong>
+        </div>
+
+        <div>
+          <span>Durée</span>
+          <strong id="orderDuration">1 mois</strong>
+        </div>
+
+        <div class="total">
+          <span>Total</span>
+          <strong id="orderPrice"></strong>
+        </div>
+      </div>
+
+      <p class="modal-note">
+        Vérifie les informations puis clique sur le bouton ci-dessous
+        pour envoyer ta commande sur WhatsApp.
+      </p>
+
+      <button id="confirmOrder" class="modal-whatsapp">
+        💬 Commander sur WhatsApp
+      </button>
+
+      <button class="modal-cancel" onclick="closeOrder()">
+        Annuler
+      </button>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
